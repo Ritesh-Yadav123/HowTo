@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expending Grid</title>
+</head>
+<body>
+    <div id="row">
+        <div class="box1" onclick="openTab('b1');" style="background-color: green; height: 45px; width: 60px; margin:20px;" >box1</div>
+        <div class="box2" onclick="openTab('b2');" style="background-color: rgb(6, 0, 128);height: 45px; width: 60px; margin:20px;">box2</div>
+        <div class="box3" onclick="openTab('b3');" style="background-color: rgb(128, 47, 0);height: 45px; width: 60px; margin:20px;">box3</div>
+    </div>
+
+    <div id="b1" class="containerTab" style="display:none;background:green">
+        <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
+
+        <h2>Box 1</h2>
+
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati doloremque eius ipsa distinctio quasi, aperiam et ab omnis itaque, laboriosam illum. Porro tempore explicabo provident beatae numquam aliquam accusamus? Nesciunt.
+        At, illo cum libero pariatur, ullam nemo sequi corrupti natus dolores ex est similique dolor aut, explicabo ab quo. Nisi sit voluptatum autem laudantium. Ad ipsam iste consequatur temporibus dolore.
+        Repellendus distinctio nam, pariatur atque provident eum accusantium debitis similique mollitia obcaecati sequi porro maiores veritatis officia, molestias sapiente voluptatem reprehenderit. Minus unde velit officia deserunt incidunt, alias laborum exercitationem.</p>
+    </div>
+
+    <div id="b2" class="containerTab" style="display:none;backgroundL:blue">
+        <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
+
+        <h2>Box 1</h2>
+        
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati doloremque eius ipsa distinctio quasi, aperiam et ab omnis itaque, laboriosam illum. Porro tempore explicabo provident beatae numquam aliquam accusamus? Nesciunt.
+        At, illo cum libero pariatur, ullam nemo sequi corrupti natus dolores ex est similique dolor aut, explicabo ab quo. Nisi sit voluptatum autem laudantium. Ad ipsam iste consequatur temporibus dolore.
+        Repellendus distinctio nam, pariatur atque provident eum accusantium debitis similique mollitia obcaecati sequi porro maiores veritatis officia, molestias sapiente voluptatem reprehenderit. Minus unde velit officia deserunt incidunt, alias laborum exercitationem.</p>
+    </div>
+
+    <div id="b3" class="containerTab" style="display:none;background:red">
+        <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
+
+        <h2>Box 1</h2>
+        
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati doloremque eius ipsa distinctio quasi, aperiam et ab omnis itaque, laboriosam illum. Porro tempore explicabo provident beatae numquam aliquam accusamus? Nesciunt.
+        At, illo cum libero pariatur, ullam nemo sequi corrupti natus dolores ex est similique dolor aut, explicabo ab quo. Nisi sit voluptatum autem laudantium. Ad ipsam iste consequatur temporibus dolore.
+        Repellendus distinctio nam, pariatur atque provident eum accusantium debitis similique mollitia obcaecati sequi porro maiores veritatis officia, molestias sapiente voluptatem reprehenderit. Minus unde velit officia deserunt incidunt, alias laborum exercitationem.</p>
+    </div>
+
+    <script>
+        function openTab(tabname){
+            var i,x;
+            x=document.getElementsByClassName('containerTab');
+            for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  document.getElementById(tabName).style.display = "block";
+
+        }
+    </script>
+</body>
+</html>
