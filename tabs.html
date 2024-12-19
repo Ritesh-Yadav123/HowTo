@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabs In WEBPAGE</title>
+</head>
+<body>
+    <div class="Tabs">
+        <button class="tablinks" onclick="openTab(event, 'HCLTECH')">HCLTECH</button>
+        <button class="tablinks" onclick="openTab(event, 'TCS')">TCS</button>
+        <button class="tablinks" onclick="openTab(event, 'WIPRO')">WIPRO</button>
+    </div>
+
+    <div id="HCLTECH" class="tabContent">
+        <h2>HCLTECH</h2>
+        <p>RITESH IS WORKING IN HCLTECH</p>
+    </div>
+
+    <div id="TCS" class="tabContent">
+        <h2>TCS</h2>
+        <p>VINEET IS WORKING IN TCS</p>
+    </div>    
+
+    <div id="WIPRO" class="tabContent">
+        <h2>WIPRO</h2>
+        <p>RAJESH IS WORKING IN WIPRO</p>
+    </div>
+
+    <script>
+        function openTab(evt, comp) {
+            // Hide all tab contents
+            var tabContent = document.getElementsByClassName('tabContent');
+            for (var i = 0; i < tabContent.length; i++) {
+                tabContent[i].style.display = 'none';
+            }
+
+            // Remove "active" class from all tablinks
+            var tablinks = document.getElementsByClassName('tablinks');
+            for (var i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(' active', '');
+            }
+
+            // Display the clicked tab content and add the "active" class to the clicked tab
+            document.getElementById(comp).style.display = 'block';
+            evt.currentTarget.className += ' active';
+        }
+
+        // Set the default active tab (HCLTECH in this case)
+        document.getElementsByClassName('tablinks')[1].click();
+    </script>
+</body>
+</html>
