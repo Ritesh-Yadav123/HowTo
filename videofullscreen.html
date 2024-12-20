@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playing video in full screen</title>
+    <link rel="icon" type="image/x-icon" href="images/shared image.jpeg">
+    <style>
+        #myVideo {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            overflow-y: hidden;
+        }
+        .btn {
+            position: relative;
+            left: 550px;
+        }
+    </style>
+</head>
+<body>
+    <video autoplay muted id="myVideo">
+    <source src="images/riteshThought.mp4">
+        This is my thought
+    </video>
+    <button class="btn" onclick="myFunction()">PAUSE</button>
+    <!-- <button class="btn">CONTINUE</button> -->
+<script>
+    var video=document.getElementById('myVideo');
+    var btn=document.getElementsByClassName('btn');
+
+    function myFunction(){
+        if(video.paused){
+            video.play();
+            btn[0].innerHTML='Pause';
+        }
+        else{
+            video.pause();
+            btn[0].innerHTML="Play";
+        }
+    }
+</script>
+</body>
+</html>
