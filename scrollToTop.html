@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Go To Top</title>
+    <style>
+        button {
+            background-color: rgb(247, 11, 11);
+            color: white;
+            height: 50px;
+            width: 40px;
+            border-radius: 20%;
+            text-align: justify;
+            position: fixed;
+            top:323px;
+            outline: 2px solid green;
+            cursor:progress;
+        }
+        body {
+            background-color: aqua;
+            overflow: auto;
+            height: 2000px;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="background-color: black; color: white;">Go To ToP</h1>
+    <p>
+        This example demonstrates how to create a "scroll to top" <br> button that 
+        becomes visible when the user starts to scroll the page.
+    </p>
+    <button onclick="topFunc()">Top</button>
+
+    <script>
+        let btn=document.getElementsByTagName('button')[0];
+
+        window.onscroll=function(){
+            myfunc();
+        };
+        function myfunc(){
+            if(document.body.scrollTop>20 || document.documentElement.scrollTop>20){
+                btn.style.display='block';
+            }
+            else{
+                btn.style.display='none';
+            }
+        }
+
+        function topFunc(){
+            window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: 'smooth'  // Smooth scrolling
+            });
+        }
+    </script>
+
+</body>
+</html>
