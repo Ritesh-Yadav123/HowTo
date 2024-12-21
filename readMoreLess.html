@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read More Less Button</title>
+    <style>
+        #more {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Example Text</h1>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi sunt tenetur,
+        expedita dolorum nemo inventore praesentium mollitia? Deleniti, cumque.
+        Pariatur, quam! Nesciunt quod quibusdam veniam numquam. Deserunt aut quis unde.
+        <span id="dot">...</span><span id="more">My name is ritesh kumar yadav and i am from koderma 
+            Jharkhand currently working as software engineer at Hcltech in luckow which is situated in heart
+            of Uttar Pradesh
+        </span>
+        <button id="btn" onclick="myfun()">READ MORE</button>
+    </p>
+
+<script>
+var btn=document.getElementById('btn');
+var dots=document.getElementById('dot');
+var more=document.getElementById('more');
+
+function myfun(){
+if(window.getComputedStyle(more).display === 'none'){
+    dots.style.display='none';
+    btn.innerText='READ Less';
+    more.style.display='inline';
+}
+else{
+    btn.innerText='READ More';
+    more.style.display='none';
+    dots.style.display='inline';
+}
+}
+</script>
+</body>
+</html>
