@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geolocation</title>
+</head>
+<body>
+    <h1> Please click on below button to get location</h1>
+    <button onclick="geolocation()">GET location</button>
+    <script>
+        x=document.getElementsByTagName('h1')[0];
+        function geolocation(){
+            try{
+                navigator.geolocation.getCurrentPosition(show);
+            }
+            catch(err){
+                x.innerHTML=err;
+            }
+        }
+        function show(position){
+            x.innerHTML = "Latitude: " + position.coords.latitude + 
+            "<br>Longitude: " + position.coords.longitude;
+        }
+    </script>
+</body>
+</html>
