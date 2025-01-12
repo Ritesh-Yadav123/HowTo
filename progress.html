@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Progress Bar</title>
+    <style>
+        #bar{
+            height: 10px;
+            background-color: rgb(195, 246, 195);
+            width: 100%;
+        }
+        #myBar{
+            width: 1%;
+            height: inherit;
+            background-color: red;
+        }
+        #btn {
+            display: block;
+            margin: auto;
+            margin-top: 23px;
+        }
+    </style>
+</head>
+<body>
+    <div id="bar"><div id="myBar"></div></div>
+    <button id="btn" onclick="move()">Click To More The bar</button>
+    <script>
+        var i=0;
+        function move(){
+            if(i==0){
+                i=1;
+                var elem=document.querySelector('#myBar');
+                var width=1;
+                var id=setInterval(frame,100);
+                function frame(){
+                    if(width>=100){
+                        clearInterval(id);
+                        i=0;
+                    }
+                    else{
+                        width++;
+                        elem.style.width=width+'%';
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
