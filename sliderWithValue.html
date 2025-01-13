@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #slider{
+            width: 100%;
+            color: red;
+            height: 40px;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Custome Slider with Value Appearance</h1>
+    <input type="range" value="50" max="100" min="1" id="slider" onblur="display()">
+    <div id="dis"></div>
+    <script>
+        var range=document.getElementById('slider')
+        var dis=document.getElementById('dis');
+        dis.innerHTML=range.value;
+        
+        range.oninput = function() {
+dis.innerHTML = this.value;
+}
+        </script>
+</body>
+</html>
