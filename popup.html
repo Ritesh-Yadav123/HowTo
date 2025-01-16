@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello Pop Up</title>
+    <style>
+        .hide{
+            display:none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello PopUp</h1>
+    <div id="dis">Click Me to show pop up</div>
+    <button id="btn">Click Me</button>
+
+    <script>
+        var dis=document.getElementById('dis');
+        var btn=document.getElementById('btn');
+        btn.addEventListener('click',hide);
+        function hide(){
+            dis.classList.toggle('hide');
+        }
+    </script>
+</body>
+</html>
