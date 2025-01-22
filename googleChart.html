@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Google Pie Chart</title>
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+  </head>
+  <body>
+    <div id="piechart"></div>
+
+    <script type="text/javascript">
+      google.charts.load("current", { packages: ["corechart"] });
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+            ["Skill", "Marks in 100"],
+            ["HTML", 20],
+            ["Css", 18],
+            ["JavaScript", 12],
+            ["NodeJs", 11],
+            ["GitHub", 45]
+        ]);
+
+        // Optional; add a title and set the width and height of the chart
+        var options = { title: "Marks of my skill", width: 550, height: 400 };
+
+        var chart = new google.visualization.PieChart(
+          document.getElementById("piechart")
+        );
+        chart.draw(data, options);
+      }
+    </script>
+  </body>
+</html>
