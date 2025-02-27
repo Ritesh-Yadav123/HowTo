@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <input type="text" id="myInput" placeholder="Search For Result" onkeyup="myFunction()">
+    <table id="myTable">
+        <tr class="header">
+            <th>NAME</th>
+            <th>From</th>
+        </tr>
+        <tr>
+            <td>Ritesh Kumar</td>
+            <td>India</td>
+        </tr>
+        <tr>
+            <td>Ritesh Kumar</td>
+            <td>India</td>
+        </tr>
+        <tr>
+            <td>Amit Chourasiya</td>
+            <td>Pakistan</td>
+        </tr>
+        <tr>
+            <td>Suhaid Akhtar</td>
+            <td>Australia</td>
+        </tr>
+    </table>
+
+    <script>
+
+        function myFunction(){
+        var input=document.querySelector('#myInput');
+        var table=document.querySelector('#myTable');
+        var filter=input.value.toUpperCase();
+        var tr=table.getElementsByTagName('tr');
+
+        for(var i=0; i<tr.length; i++){
+            td=tr[i].getElementsByTagName('td')[0];
+            if(td){
+                txtValue=td.textContent || td.innerText;
+                if(txtValue.toUpperCase().indexOf(filter)>-1){
+                    tr[i].style.dispaly="";
+                }
+                else {
+                    tr[i].style.display='none';
+                }
+            }
+        }
+        }
+    </script>
+</body>
+</html>
