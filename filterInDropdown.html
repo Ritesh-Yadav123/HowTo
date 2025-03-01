@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter in Dropdown</title>
+    <style>
+        a{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="dropdown">
+        <button onclick="myfunction()" class="dropbtn">DROPDOWN</button>
+        <div id="myDropdown" class="dropdown-content">
+            <input type="text" placeholder="Search for the result" id="myInput" onkeyup="filterfunction()">
+            <a href="#about">About</a>
+            <a href="#base">Base</a>
+            <a href="#blog">Blog</a>
+            <a href="#contact">Contact</a>
+            <a href="#custom">Custom</a>
+            <a href="#support">Support</a>
+            <a href="#tools">Tools</a>
+        </div>
+    </div>
+    <script>
+        function myFunction(){
+            document.getElementById('myDropdown').classList.toggle('show');
+        }
+
+        function filterfunction(){
+            var input=document.getElementById('myInput');
+            var filter=input.value.toUpperCase();
+            var div=document.getElementById('myDropdown');
+            var a=div.getElementsByTagName('a');
+            for(var i=0; i<a.length; i++){
+                txtValue=a[i].textContent || a[i].innerText;
+                if(txtValue.toUpperCase().indexOf(filter)>-1){
+                    a[i].style.display="";
+                }
+                else{
+                    a[i].style.display='none';
+                }
+            }
+        }
+    </script>
+</body>
+</html>
