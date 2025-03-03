@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sorting in List</title>
+  </head>
+  <body>
+    <button onclick="sortListDir()">Sort</button>
+    <ul id="id01">
+      <li>Oslo</li>
+      <li>Stockholm</li>
+      <li>Helsinki</li>
+      <li>Berlin</li>
+      <li>Rome</li>
+      <li>Madrid</li>
+    </ul>
+    <!-- <script>
+         function sortListDir() {
+        var list = document.getElementById("id01");
+        var switching = true;
+        while (switching) {
+          switching = false;
+          var b = list.querySelectorAll("LI");
+          for (var i = 0; i < b.length - 1; i++) {
+            if (b[i].innerHTML.toLowerCase() > b[i + 1].innerHTML.toLowerCase()) {
+              // Swap elements
+              b[i].parentNode.insertBefore(b[i + 1], b[i]);
+              switching = true;
+            }
+          }
+        }
+      }
+    </script> -->
+
+
+
+
+
+    <script>
+        let ascending = true; // Flag to track sorting direction
+
+function sortListDir() {
+  var list = document.getElementById("id01");
+  var switching = true;
+  while (switching) {
+    switching = false;
+    var b = list.querySelectorAll("LI");
+    for (var i = 0; i < b.length - 1; i++) {
+      let compareResult;
+      if (ascending) {
+        compareResult = b[i].innerHTML.toLowerCase() > b[i + 1].innerHTML.toLowerCase();
+      } else {
+        compareResult = b[i].innerHTML.toLowerCase() < b[i + 1].innerHTML.toLowerCase();
+      }
+      if (compareResult) {
+        // Swap elements
+        b[i].parentNode.insertBefore(b[i + 1], b[i]);
+        switching = true;
+      }
+    }
+  }
+  // Toggle the sorting direction for the next click
+  ascending = !ascending;
+}
+    </script>
+  </body>
+</html>
