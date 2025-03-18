@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Filter List in WebPage</title>
+  </head>
+  <body>
+    <input
+      type="text"
+      id="takeInput"
+      onkeyup="filterList()"
+      placeholder="Search for the result"
+    />
+    <ul id="myList"></ul>
+
+    <script src="list.js">
+
+    </script>
+
+    <script>
+      // Define the list of items to display
+      // Function to display the list
+      function displayList() {
+        const list = document.querySelector("#myList");
+        if (!list) {
+          return;
+        }
+
+        let innerHtml = "";
+        item.forEach((el) => {
+          innerHtml += `<li>${el.name}</li>`;
+        });
+        list.innerHTML = innerHtml;
+      }
+
+      // Function to filter the list
+      function filterList() {
+        const input = document.getElementById("takeInput");
+        const filter = input.value.toUpperCase(); // Get the input value and convert to uppercase
+        const ul = document.getElementById("myList");
+        const li = ul.getElementsByTagName("li");
+
+        for (let i = 0; i < li.length; i++) {
+          const txtValue = li[i].textContent || li[i].innerText; // Get the text content of the <li>
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = ""; // Show the <li> if it matches the filter
+          } else {
+            li[i].style.display = "none"; // Hide the <li> if it doesn't match
+          }
+        }
+      }
+
+      // Display the list when the page loads
+      displayList();
+    </script>
+  </body>
+</html>
